@@ -6,10 +6,12 @@ match_flag = 0
 count = 0
 
 client = MongoClient('localhost', 27017)
+
 db = client.collection								#using database (collection)
 coll = db.foods										#using collection in the db (foods)
-with open('example-input.json') as data:
-	curr_user = json.load(data)
+curr = db.inputc
+curr_user = curr.find_one({})
+db.outputc.remove({})
 
 for prev in coll.find({"user_name":curr_user["user_name"]}):
 	for other in coll.find():
@@ -30,12 +32,12 @@ if match_flag == 1:	#if a match is found with someone
 		for items in coll.find({"user_name":match["user_name"], "rest_name":curr_user["rest_name"], "veg": True}):
 			if count < 3:
 				count += 1
-				print items["dish_name"]
+				db.outputc.insert({"dish_name":items["dish_name"]})
 	else :
-		for items in coll.find({"user_name":match["user_name"], "rest_name":curr_user["rest_name"]}):
+		for items in coll.find({"user_name":match["user_name"], "rest_name":curr_user["rest_name"]}, {'_id':0}):
 			if count < 3:
 				count += 1
-				print items["dish_name"]
+				db.outputc.insert({"dish_name":items["dish_name"]})
 
 else: 	#if no match is found, take a random review of that restuarant
 	if curr_user["veg"] == True:
@@ -43,12 +45,11 @@ else: 	#if no match is found, take a random review of that restuarant
 		for rand in coll.find({"user_name":user["user_name"], "rest_name":curr_user["rest_name"], "veg": True}):
 			if count < 3:
 				count += 1
-				print rand["dish_name"]
+				db.outputc.insert({"dish_name":rand["dish_name"]})
 	else:
 		user = coll.find_one({"rest_name":curr_user["rest_name"]})
 		for rand in coll.find({"user_name":user["user_name"], "rest_name":curr_user["rest_name"]}):
 			if count < 3:
 				count += 1
-				print rand["dish_name"]
+				db.outputc.insert({"dish_name":rand["dish_name"]})
 		
-
