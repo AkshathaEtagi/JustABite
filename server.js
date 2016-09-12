@@ -76,9 +76,9 @@ app.get('/session',function(req,res){
         db.close();
 
         });
-                var collection=db.collection('foods');
+                var collection=db.collection('current');
 
-                collection.insert([user_name], function(err, result){
+                collection.insert([{user_name:q}], function(err, result){
                     if(err){
                         console.log(err);
                     }
@@ -137,12 +137,7 @@ app.get('/sessionthree',function(req,res){
 
                         }
                 });
-                var collection=db.collection('foods');
-                collection.insert([resto], function(err, result){
-                    if(err){
-                        console.log(err);
-                    }
-                });
+                
 
 
 
@@ -162,6 +157,7 @@ app.get('/sessionfour',function(req,res){
        console.log('Name of Dish : '+ req.query.DishName);
        console.log('Spicy Or Sweet : ' + req.query.sname);
        console.log('Cost : ' + req.query.vname);
+        res.sendFile(__dirname+'/public/THANKYOU.html');
 
 MongoClient.connect(url, function(err, db){
     if(err){
@@ -278,4 +274,36 @@ res.send('Thankyou');
 }
    db.close(); 
 });
+});
+
+
+
+MongoClient.connect(url, function(err, db){
+    if(err){
+            console.log(err);
+    }
+    else{
+        var collection=db.collection('outputc');
+
+        collection.find().toArray(function(err, result){
+                        if(err){
+                                console.log(err);
+
+                        }
+
+                        else if(result.length>0){
+                                    console.log('success', result);
+                                }
+                                    
+                           else{
+                                    console.log('no doc')                            
+                              }
+
+                
+        
+        db.close();
+
+        });
+    }
+
 });
