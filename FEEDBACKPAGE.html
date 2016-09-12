@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>RESTAURANT SEARCH</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+body{
+background-image: url("/assets/css/wat.jpg");
+}
+</style>
+
+</head>
+<body>
+
+   <div class="container">
+    <h2>Feedback!</h2></div>
+  
+<br/><br/><br/>
+<div class="container">
+
+<form action="/sessionfour" method="GET">
+<h4 >Enter the name of your order</h4>
+  </br>
+  <form id="formid">
+    <div class="form-group">
+       
+       <input type="text" class="form-control" name="DishName" id="DishName" placeholder="Enter Your Dish Name">
+    </div>
+<h4>Select the cuisine of the food you ordered</h4>
+<br/>
+	<div class="input-group">
+              
+		<select class="form-control" name="rname">
+			<option>American</option>
+			<option>Chinese</option>
+			<option>Indian</option>
+                        <option>Italian</option>
+                        <option>Lebanese</option>
+                        <option>Mediterranean</option>
+                        <option>Mexican</option>
+                        <option>Thai</option>
+                        <option>Vietnamese</option>
+                        <option>Others</option>
+
+           </select>
+	</div></div>
+</div>   
+<br/>   
+ <div class = "container"><h4>Choose the Spicy/Sweet Level(1 being the sweetest,10 being the spiciest)</h4>
+
+	<div class="input-group">
+		<select class="form-control" name="sname">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                      
+
+
+
+
+
+		</select>
+	</div>        
+
+<br/>
+<h4>Choose the Cost Level(1 is cheapest,10 is very expensive)</h4>
+
+<div class="input-group">
+		<select class="form-control" name="vname">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+	</select>
+
+<br/>
+<br/>
+</div>
+<br/>
+
+     <div class="form-group">
+     <button type="submit" class="btn btn-default">Submit</button>
+  </div></div>
+</form>
+
+</body>
+</html>
+

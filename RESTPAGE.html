@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>RESTAURANT SEARCH</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+body{
+background-image: url("/assets/css/blue.jpg");
+}
+</style>
+
+
+</head>
+<body>
+
+<div class="container">
+  
+    <h2 class="text-center">Select the restaurant you are currently at!</h2>
+  
+ 
+</div>
+<br/><br/><br/><br/><br/>
+
+<div class="container">
+  <h2>Select the Restaurant Name:</h2>
+ <br/>
+<br/>
+<br/>
+<form action="/sessionthree" method="GET">
+
+	<div class="input-group">
+		<select class="form-control" name="jname">
+			<option>McDonald's</option>
+			<option>Taco Bell</option>
+			<option>Toscano's</option>
+                        <option>California Burrito</option>
+                        <option>Little Italy</option>
+                        <option>Chili's</option>
+                        <option>Ginger Tiger</option>
+                        <option>Beijing Bites</option>
+                        <option>The Only Place</option>
+                        <option>Tao Terraces</option>
+                      
+
+
+
+
+
+		</select>
+	</div>
+   <br/>
+<br/>
+
+
+<div class="form-group">
+  <label for="sel1">Select list:</label>
+  <select class="form-control" id="sel1" name="optradio">
+    <option><div class= "col-sm-5">Vegetarian<div class="col-sm-7"></div></div></option>
+    <option>Vegetarian and Non Vegetarian</option>
+    
+  </select>
+</div>
+
+
+
+
+<div class="form-group">
+     
+     <button type="submit" class="btn btn-default">Submit</button>
+  </div>
+</form>
+</div>
+
+</body>
+</html>
+
+
+
+
